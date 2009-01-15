@@ -21,7 +21,7 @@ class DBMSSQL extends DBInterface {
     return $this->query;
   }
 
-  private function convert($a) {
+  private function convert($a) {    
     foreach($a as $i => $value) {
       $a[$i] = iconv($this->dbenc, $this->sysenc, $value);
     }
