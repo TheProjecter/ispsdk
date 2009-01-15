@@ -20,7 +20,7 @@ class DBMSSQL extends DBInterface {
     $this->query = mssql_query(iconv($this->sysenc, $this->dbenc, $query), $this->dblink);
     return $this->query;
   }
-
+	
   private function convert($a) {    
     foreach($a as $i => $value) {
       $b[iconv($this->dbenc, $this->sysenc,$i)] = iconv($this->dbenc, $this->sysenc, $value);
