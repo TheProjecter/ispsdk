@@ -17,15 +17,15 @@ class DBMSSQL extends DBInterface {
       $this->select_db();
       $this->connected = true;
     }
-    $this->query = mssql_query($query, $this->dblink);
+    $this->query = mssql_query(iconv($this->sysenc, $this->dbenc, $query), $this->dblink);
     return $this->query;
   }
 
   private function convert($a) {    
     foreach($a as $i => $value) {
-      $a[$i] = iconv($this->dbenc, $this->sysenc, $value);
+      $b[iconv($this->dbenc, $this->sysenc,$i)] = iconv($this->dbenc, $this->sysenc, $value);
     }
-    return $a;
+    return $b;
   }
    
   function fetch($query = null) {
