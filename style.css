@@ -1,0 +1,230 @@
+a {
+  color:#4C6AA1;
+}
+
+#menu0 a {
+  display: block;  
+  text-decoration: none;
+  color: #4c6aa1;
+  margin: 3px;
+  padding: 3px;
+}
+
+#menu0 div.sm>a {
+  background: url(img/sml_bg3.gif) no-repeat right;
+  padding: 4px;
+  padding-right: 12px;
+}
+
+#menu0 div.sm>a:hover {
+  padding: 3px;
+  background-color: #f6f9fd;
+  padding-right: 11px;
+  border: #d2daed solid 1px;
+}
+
+#menu0 div.mi>a {
+  background: url(img/sml_bg1.gif) #f6f9fd repeat-x bottom;
+  border: #d2daed solid 1px;
+}
+
+#menu0 div.mi>a:hover {
+  background: url(img/sml_bg2.gif) #fefefe repeat-x bottom;
+}
+
+#menu0 div.smi>a {
+  background: url(img/sml_bg4.gif) #e8f9e8 repeat-x bottom;
+  border: #d2daed solid 1px;
+}
+
+#menu0 div.smi>a:hover {
+  background: url(img/sml_bg5.gif) #f0fcf0 repeat-x bottom;
+}
+
+
+#menu0 div.ni {
+  float:none !important;
+  clear: both;
+}
+
+#menu0 {
+  background: url(img/mm_bg.gif) repeat-x bottom #f5f9fd;
+  padding-top: 10px;
+  border-bottom: 1px solid #b2b2b2;
+}
+
+#menu0>div {
+  float: left;
+}
+
+#menu0 div.sm>div {
+  display: none;
+  position: absolute;
+  background: url(img/mm_bg.gif) repeat-x bottom #f5f9fd;
+  border-top: 1px dotted #b2b2b2;
+  border-left: 1px solid #b2b2b2;  
+  border-bottom: 1px solid #b2b2b2;  
+  border-right: 1px solid #b2b2b2;  
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.dialog {
+  border: 2px solid #B2B2B2;
+  background-color: #f6f9fd;
+  position: fixed;
+  padding: 10px;
+}
+
+#menuElementDialog {
+  visibility: hidden;
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+}
+
+#menuElementDialog label span {
+  display: inline-block;
+  width: 100pt;
+}
+
+#messages {
+  background-color: white;
+  border:1px solid #D2DAED;
+  float: right !important;
+  margin: 3px;
+  padding: 3px;
+}
+
+#mist {
+  position: fixed;
+  opacity: 0.5;
+  background-color: black;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 10;
+}
+
+.loadingbg {
+  background-image: url(img/bb.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#authDialog {
+  top: 0px;
+  right: 0px;
+  position: absolute;
+  padding: 5px;
+  z-index: 5;
+  background-color:#f5f9fd;
+  border-bottom: 1px solid #b2b2b2;
+  border-left: 1px solid #b2b2b2;
+
+}
+
+#authDialog span {
+  display: inline-block;
+  width: 100px;
+}
+
+#authDialog_login {
+  display: none;
+}
+
+#authDialog_logout {
+  display: none;
+}
+
+
+#authDialog_tabs {
+  text-align: right;
+}
+
+#authDialog_tabs a {
+  border: #d2daed solid 1px;
+  text-decoration: none;
+  padding: 3px;
+  display: inline-block;
+  background: url(img/sml_bg4.gif) #e8f9e8 repeat-x bottom;
+}
+
+#authDialog_tabs a:hover {
+  background: url(img/sml_bg5.gif) #f0fcf0 repeat-x bottom;
+}
+
+#authDialog_loginedname {
+  font-weight: bold;
+}
+
+#menuCADialog {
+  visibility: hidden;
+  position: absolute;
+  z-index: 100;    
+  border-top: #d2daed solid 1px;
+  border-bottom: #d2daed solid 1px;
+  border-left: #d2daed solid 1px;
+}
+
+#menuCADialog a {
+  display: inline-block;
+  background: #f8e9e9 repeat-x bottom url(img/sml_bg6.gif);
+  text-decoration: none;
+  border-right: #d2daed solid 1px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#menuCADialog a:hover {
+  background: #f8e9e9 repeat-x bottom url(img/sml_bg7.gif);
+}
+
+#content {
+  padding: 5px;
+}
+
+#yesnoDialog>a {
+  border: #d2daed solid 1px;
+  text-decoration: none;
+  padding: 3px;
+  display: inline-block;
+  background: url(img/sml_bg4.gif) #e8f9e8 repeat-x bottom;
+}
+
+#yesnoDialog {
+  top: 40px;
+  visibility: hidden;
+  z-index: 101;
+}
+
+
+#yesnoDialog_message {
+  text-align: center;
+}
+
+#messageDialog>a {
+  border: #d2daed solid 1px;
+  text-decoration: none;
+  padding: 3px;
+  display: inline-block;
+  background: url(img/sml_bg4.gif) #e8f9e8 repeat-x bottom;
+}
+
+#messageDialog {
+  top: 40px;
+  visibility: hidden;
+  z-index: 101;
+}
+
+
+#messageDialog_message {
+  text-align: center;
+}

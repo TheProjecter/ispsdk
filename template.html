@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" href="style.css" type="text/css" /> 
+<!--[if IE]><link rel="stylesheet" type="text/css" href="styleie.css" /><![endif]-->
+<script src="js/mt.js" type="text/javascript"></script>
+<script src="js/mt-more.js" type="text/javascript"></script>
+<script src="js/fwsr.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div style="background-color: #F5F9FD;">
+<img border="0" src="img/logo.gif"/>
+</div>
+<div id="menu0" class="level0"></div>
+<div id="content"></div>
+
+<form id="menuElementDialog" class="dialog">
+  <label><span>Menu name:</span><input type="text" id="menuElementDialog.m"/></label><br />
+  <label><span>File name:</span><input type="text" id="menuElementDialog.f"/></label><br />
+  <label><span>Group:</span><select id="menuElementDialog.g"/></label><br />
+  <input type="submit" value="Ok" onclick="menuElementDialog_ok(); return false;"/> 
+  <input type="submit" value="Cancel" onclick="menuElementDialog_cancel(); return false;"/>
+</form>
+<div id="mist"></div>
+<div id="yesnoDialog" class="dialog">
+<div id="yesnoDialog_message"></div>
+<a href="javascript: ;" id="yesnoDialog_yes">Yes</a>
+<a href="javascript: ;" id="yesnoDialog_no">No</a>  
+</div>
+<div id="messageDialog" class="dialog">
+<div id="messageDialog_message"></div>
+<a href="javascript: ;" id="yesnoDialog_ok">Ok</a>
+</div>
+
+<div id="authDialog">
+<div id="authDialog_tabs">
+<a href="javascript: ;" onclick="authDialog_login_show()">login</a>
+<a href="javascript: ;" onclick="authDialog_logout_show()">logout</a>
+</div>
+<form id="authDialog_login" method="post">
+  <label><span>Login:</span><input type="text" name="loginname" id="authDialog_loginname" tabindex="1"/></label><br/>
+  <label><span>Password:</span><input type="password" name="password" id="authDialog_password" value="password" tabindex="2" /></label><br/>
+  <input type="submit" name="login" value="Ok" tabindex="3" />
+  <input type="button" onclick="authDialog_cancel()" value="Cancel" tabindex="4" />
+</form>
+<form id="authDialog_logout" method="post">
+  <span>Username:</span><span id="authDialog_loginedname"></span><br/>
+  <input type="submit" name="logout" value="Ok"/>
+  <input type="button" onclick="authDialog_cancel()" value="Cancel"/>  
+</form>  
+</div>
+<div id="menuCADialog">
+  <a href="javascript:;" onclick="menuCADialog_delete()">-</a><a href="javascript:;" onclick="menuCADialog_change()">#</a>
+</div>
+</body>
+
+</html>
