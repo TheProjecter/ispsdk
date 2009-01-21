@@ -6,6 +6,8 @@ class FWSRTable extends FWSRObject {
     $container->appendChild($table);
     if (is_array($this->depend[0])) {
       $table->setAttribute('class','2d');
+      $table->setAttribute('cellpadding', '0');
+      $table->setAttribute('cellspacing', '0');
       $odd = true;
       $header = true;
       foreach($this->depend as $i => $ar1) {
