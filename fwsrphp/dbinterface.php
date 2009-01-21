@@ -24,6 +24,7 @@ abstract class DBInterface {
     $this->dbpassword = $dbpassword;
     $this->dbpref = $dbpref;
     $this->connected = false;
+
   }
 }
 ?>

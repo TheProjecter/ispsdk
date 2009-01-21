@@ -228,3 +228,30 @@ html, body {
 #messageDialog_message {
   text-align: center;
 }
+
+
+
+
+div.FWSRTable table {
+  border: 1px solid #b2b2b2;
+  border-left: none !important;
+  margin: 0px;
+  padding: 0px;
+  background-color: #f2f8ff;
+}
+
+div.FWSRTable td, div.FWSRTable th {
+  border-left: 1px solid #d2d2d2;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.FWSRTable th {
+  padding-left: 3px;
+  padding-right: 3px;
+  background:#F6F9FD url(img/sml_bg1.gif) repeat-x scroll center bottom;
+}
+
+div.FWSRTable tr.odd {
+  background-color: white;
+}
