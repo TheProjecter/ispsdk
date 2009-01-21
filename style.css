@@ -255,3 +255,12 @@ div.FWSRTable th {
 div.FWSRTable tr.odd {
   background-color: white;
 }
+
+div.FWSRTable td.int {
+  text-align: right;
+}
+
+div.FWSRTable td.null {
+  background: url(img/null_img.gif) no-repeat center;
+}
+

@@ -27,7 +27,11 @@ class FWSRTable extends FWSRObject {
         $table->appendChild($tr);
         foreach($ar1 as $j => $value) {
           $td = $document->createElement('td');
-          $td->appendChild($document->createTextNode($value));
+          $td->appendChild($document->createTextNode(is_null($value)?'':$value));
+          if (is_numeric($value)) 
+            $td->setAttribute('class', 'int');
+          if (is_null($value))
+            $td->setAttribute('class', 'null');
           $tr->appendChild($td);
         }
         $odd = !$odd;
@@ -44,7 +48,12 @@ class FWSRTable extends FWSRObject {
         $th->appendChild($document->createTextNode($i));
         $tr->appendChild($th);
         $td = $document->createElement('td');
-        $td->appendChild($document->createTextNode($value));
+        $td->appendChild($document->createTextNode(is_null($value)?'':$value));
+        if (is_numeric($value)) 
+          $td->setAttribute('class', 'int');
+        if (is_null($value))
+          $td->setAttribute('class', 'null');
+
         $tr->appendChild($td);
         $odd = !$odd;
       }      
