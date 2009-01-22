@@ -16,9 +16,11 @@ class FWSRTable extends FWSRObject {
           $tr->setAttribute('class','head');
           $table->appendChild($tr);
           foreach($ar1 as $j => $value) {
-            $th = $document->createElement('th');
-            $th->appendChild($document->createTextNode($j));
-            $tr->appendChild($th);
+            if ($j[0] != '*') {
+              $th = $document->createElement('th');
+              $th->appendChild($document->createTextNode($j));
+              $tr->appendChild($th);
+            }
           }          
           $header = false;
         }
@@ -26,13 +28,15 @@ class FWSRTable extends FWSRObject {
         $tr->setAttribute('class',$odd?'odd':'even');
         $table->appendChild($tr);
         foreach($ar1 as $j => $value) {
-          $td = $document->createElement('td');
-          $td->appendChild($document->createTextNode(is_null($value)?'':$value));
-          if (is_numeric($value)) 
-            $td->setAttribute('class', 'int');
-          if (is_null($value))
-            $td->setAttribute('class', 'null');
-          $tr->appendChild($td);
+          if ($j[0] != '*') {
+            $td = $document->createElement('td');
+            $td->appendChild($document->createTextNode(is_null($value)?'':$value));
+            if (is_numeric($value)) 
+              $td->setAttribute('class', 'int');
+            if (is_null($value))
+              $td->setAttribute('class', 'null');
+            $tr->appendChild($td);
+          }
         }
         $odd = !$odd;
       }      
@@ -41,21 +45,23 @@ class FWSRTable extends FWSRObject {
       $table->setAttribute('class','1d');
       $odd = true;
       foreach($this->depend as $i => $value) {
-        $tr = $document->createElement('tr');
-        $tr->setAttribute('class',$odd?'odd':'even');
-        $table->appendChild($tr);
-        $th = $document->createElement('th');
-        $th->appendChild($document->createTextNode($i));
-        $tr->appendChild($th);
-        $td = $document->createElement('td');
-        $td->appendChild($document->createTextNode(is_null($value)?'':$value));
-        if (is_numeric($value)) 
-          $td->setAttribute('class', 'int');
-        if (is_null($value))
-          $td->setAttribute('class', 'null');
+        if ($i[0] != '*') {
+          $tr = $document->createElement('tr');
+          $tr->setAttribute('class',$odd?'odd':'even');
+          $table->appendChild($tr);
+          $th = $document->createElement('th');
+          $th->appendChild($document->createTextNode($i));
+          $tr->appendChild($th);
+          $td = $document->createElement('td');
+          $td->appendChild($document->createTextNode(is_null($value)?'':$value));
+          if (is_numeric($value)) 
+            $td->setAttribute('class', 'int');
+          if (is_null($value))
+            $td->setAttribute('class', 'null');
 
-        $tr->appendChild($td);
-        $odd = !$odd;
+          $tr->appendChild($td);
+          $odd = !$odd;
+        }
       }      
     }
   }
