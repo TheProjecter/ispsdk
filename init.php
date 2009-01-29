@@ -13,5 +13,7 @@ if (!isset($_SESSION['db']) || !isset($_SESSION['users'])) {
   $_SESSION['db']->select_db();
 }
 
+setlocale(LC_ALL, 'rus');
+
 $document = new DOMDocument("1.0","utf-8");
 ?>
