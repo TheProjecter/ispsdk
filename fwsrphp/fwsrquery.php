@@ -1,12 +1,26 @@
 <?php
 class FWSRQuery extends FWSRObject {
-  private $query;
+  private $query;  
   public function makeresults() {
     $this->db->query($this->query);    
-    while($dbr = $this->db->fetcha()) {
+	$mask = null;
+    while($dbr = $this->db->fetcha()) {	
+      if (!$mask) {
+        foreach($dbr as $i => $value) 
+          if ($value == null) $mask[$i] = false;
+          else $mask[$i] = true;		  
+	  } else {
+	    foreach($dbr as $i => $value) 
+		  if ($value != null && $mask[$i] == false) $mask[$i] = true;
+	  }
       $this->result[] = $dbr;
-    }    
-    if (count($this->result) == 0) $this->ready = false;
+    }    	
+    if (count($this->result) == 0) $this->ready = false;	
+	foreach($this->result as $i => $iv) {
+		foreach($mask as $j => $jv) {
+			if (!$jv) unset($this->result[$i][$j]);
+		}
+	}	
   }
 
   public function process(&$document, &$container, &$frame) {
