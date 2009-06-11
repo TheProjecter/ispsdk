@@ -1,6 +1,6 @@
 <?php
 class FWSRQuery extends FWSRObject {
-  private $query;  
+  protected $query;  
   public function makeresults() {
     $this->db->query($this->query);    
 	$mask = null;
